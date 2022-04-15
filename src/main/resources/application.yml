@@ -1,0 +1,9 @@
+server:
+  port: 9005
+
+spring:
+  application:
+    name: telegram-bot-server
+  profiles:
+    # 开发环境为默认环境
+    active: dev

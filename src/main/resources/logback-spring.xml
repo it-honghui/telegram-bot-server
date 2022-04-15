@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <jmxConfigurator/>
+
+    <springProfile name="dev">
+        <appender class="ch.qos.logback.core.ConsoleAppender" name="CONSOLE">
+            <encoder>
+                <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n</pattern>
+            </encoder>
+        </appender>
+    </springProfile>
+
+    <springProfile name="test">
+        <appender class="ch.qos.logback.core.rolling.RollingFileAppender" name="LOGFILE">
+            <File>${LOG_PATH}/today.log</File>
+            <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+                <FileNamePattern>${LOG_PATH}/%d{yyyy-MM-dd}.%i.log.gz</FileNamePattern>
+                <maxHistory>30</maxHistory>
+                <maxFileSize>500MB</maxFileSize>
+            </rollingPolicy>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n</pattern>
+            </layout>
+        </appender>
+    </springProfile>
+
+    <springProfile name="prod">
+        <appender class="ch.qos.logback.core.rolling.RollingFileAppender" name="LOGFILE">
+            <File>${LOG_PATH}/today.log</File>
+            <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+                <FileNamePattern>${LOG_PATH}/%d{yyyy-MM-dd}.%i.log.gz</FileNamePattern>
+                <maxHistory>30</maxHistory>
+                <maxFileSize>500MB</maxFileSize>
+            </rollingPolicy>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n</pattern>
+            </layout>
+        </appender>
+    </springProfile>
+
+    <root level="info">
+        <springProfile name="dev">
+            <appender-ref ref="CONSOLE"/>
+        </springProfile>
+        <springProfile name="prod">
+            <appender-ref ref="LOGFILE"/>
+        </springProfile>
+        <springProfile name="test">
+            <appender-ref ref="LOGFILE"/>
+        </springProfile>
+    </root>
+</configuration>
