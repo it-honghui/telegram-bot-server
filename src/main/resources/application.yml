@@ -1,5 +1,5 @@
 server:
-  port: 9005
+  port: 8080
 
 spring:
   application:
@@ -7,3 +7,10 @@ spring:
   profiles:
     # 开发环境为默认环境
     active: dev
+
+# 默认关闭swagger，防止正式环境暴露接口文档
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: false
+    enabled: false

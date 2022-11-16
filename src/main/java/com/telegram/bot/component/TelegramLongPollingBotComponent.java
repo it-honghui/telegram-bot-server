@@ -144,7 +144,7 @@ public class TelegramLongPollingBotComponent extends TelegramLongPollingBot {
     return null;
   }
 
-  private void send(BotApiMethod<?> message) {
+  public void send(BotApiMethod<?> message) {
     try {
       execute(message);
     } catch (TelegramApiException e) {
