@@ -1,7 +1,7 @@
 api:
   password: "TELEGRAM_BOT_SERVER_API_PASSWORD"
 
-telegrambot:
+telegramBot:
   username: "honghui_bot"
   botToken: "5218594007:AAEmv5n6VahO6UTlHxM5rkOVlyESFaJdg4c"
 

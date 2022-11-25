@@ -35,9 +35,9 @@ public class TelegramLongPollingBotComponent extends TelegramLongPollingBot {
 
   public static String COMMAND_PREFIX = "/";
 
-  @Value("${telegrambot.username}")
+  @Value("${telegramBot.username}")
   private String username;
-  @Value("${telegrambot.botToken}")
+  @Value("${telegramBot.botToken}")
   private String botToken;
 
   private final GroupMessageService groupMessageService;
