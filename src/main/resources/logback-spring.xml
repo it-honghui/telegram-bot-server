@@ -12,9 +12,9 @@
 
     <springProfile name="test">
         <appender class="ch.qos.logback.core.rolling.RollingFileAppender" name="LOGFILE">
-            <File>${LOG_PATH}/today.log</File>
+            <File>./log/today.log</File>
             <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-                <FileNamePattern>${LOG_PATH}/%d{yyyy-MM-dd}.%i.log.gz</FileNamePattern>
+                <FileNamePattern>./log/%d{yyyy-MM-dd}.%i.log.gz</FileNamePattern>
                 <maxHistory>30</maxHistory>
                 <maxFileSize>500MB</maxFileSize>
             </rollingPolicy>
@@ -26,9 +26,9 @@
 
     <springProfile name="prod">
         <appender class="ch.qos.logback.core.rolling.RollingFileAppender" name="LOGFILE">
-            <File>${LOG_PATH}/today.log</File>
+            <File>./log/today.log</File>
             <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-                <FileNamePattern>${LOG_PATH}/%d{yyyy-MM-dd}.%i.log.gz</FileNamePattern>
+                <FileNamePattern>./log/%d{yyyy-MM-dd}.%i.log.gz</FileNamePattern>
                 <maxHistory>30</maxHistory>
                 <maxFileSize>500MB</maxFileSize>
             </rollingPolicy>

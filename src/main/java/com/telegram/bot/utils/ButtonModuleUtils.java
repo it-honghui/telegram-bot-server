@@ -16,19 +16,19 @@ public class ButtonModuleUtils {
 
   public static InlineKeyboardMarkup getAddModule(String kind) {
     InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
-    List<List<InlineKeyboardButton>> keyboard = new ArrayList<>();
-    List<InlineKeyboardButton> buttons = new ArrayList<>();
+    List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+    List<InlineKeyboardButton> keyboardButtonsRow1 = new ArrayList<>();
     InlineKeyboardButton add = addInlineKeyboard("ADD", "ADD", InlineKeyboardButtonFiled.CALLBACK_DATA);
-    buttons.add(add);
+    keyboardButtonsRow1.add(add);
     if ("back".equals(kind)) {
       InlineKeyboardButton back = addInlineKeyboard("CANCEL", "CANCEL", InlineKeyboardButtonFiled.CALLBACK_DATA);
-      buttons.add(back);
+      keyboardButtonsRow1.add(back);
     } else if ("no".equals(kind)) {
       InlineKeyboardButton back = addInlineKeyboard("No more, show my report", "OTHERS", InlineKeyboardButtonFiled.CALLBACK_DATA);
-      buttons.add(back);
+      keyboardButtonsRow1.add(back);
     }
-    keyboard.add(buttons);
-    inlineKeyboardMarkup.setKeyboard(keyboard);
+    rowList.add(keyboardButtonsRow1);
+    inlineKeyboardMarkup.setKeyboard(rowList);
     return inlineKeyboardMarkup;
   }
 

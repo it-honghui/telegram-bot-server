@@ -14,5 +14,5 @@
 ```shell
 cd telegram-bot-server
 docker build -t telegram-bot:v1.0.0 .
-docker run -it -d -p 8080:8080 --name telegram-bot telegram-bot:v1.0.0
+docker run -it -d -p 8080:8080 --name telegram-bot -v $PWD/log/:/log/ telegram-bot:v1.0.0
 ```
